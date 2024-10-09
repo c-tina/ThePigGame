@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Vistas -->
+    <View
+        android:id="@+id/viewUp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/azul_500"
+        app:layout_constraintBottom_toTopOf="@+id/viewDown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <View
+        android:id="@+id/viewDown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/azul_100"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewUp" />
+
+    <!-- Imagen del dado -->
+
+    <ImageView
+        android:id="@+id/imgDado"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewUp"
+        app:srcCompat="@drawable/dado_1" />
+
+    <!-- TextView jugadores -->
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_background"
+        android:textSize="30sp"
+        android:text="Jugador 1"
+        app:layout_constraintBottom_toBottomOf="@+id/viewUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_background"
+        android:textSize="30sp"
+        android:text="Jugador 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewUp"
+        app:layout_constraintVertical_bias="0.881" />
+
+    <!-- Botones Lanzar y Turno -->
+
+    <Button
+        android:id="@+id/lanzar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azul_600"
+        android:fontFamily="@font/kodemono"
+        android:text="LANZAR"
+        android:textSize="20sp"
+        android:onClick="lanzarDado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgDado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.30" />
+
+    <Button
+        android:id="@+id/hold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azul_600"
+        android:fontFamily="@font/kodemono"
+        android:text="TURNO"
+        android:textSize="20sp"
+        android:onClick="pasarTurno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgDado"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.30" />
+
+    <!-- TextView de las puntuaciones -->
+
+    <TextView
+        android:id="@+id/numDadoPlayer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalPlayer1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewUp"/>
+
+    <TextView
+        android:id="@+id/numDadoPlayer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="@id/viewDown"
+        app:layout_constraintEnd_toStartOf="@+id/totalPlayer2"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@id/viewDown"
+        app:layout_constraintTop_toBottomOf="@+id/viewUp" />
+
+    <TextView
+        android:id="@+id/totalPlayer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="@id/viewUp"
+        app:layout_constraintStart_toEndOf="@+id/numDadoPlayer1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalPlayer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/viewDown"
+        app:layout_constraintTop_toBottomOf="@+id/viewUp"
+        app:layout_constraintStart_toEndOf="@id/numDadoPlayer2"/>
+
+    <!-- TextView ganador -->
+
+    <TextView
+        android:id="@+id/ganador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kodemono"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/nuevaPartida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botón ganador -->
+
+    <Button
+        android:id="@+id/nuevaPartida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NUEVA PARTIDA"
+        android:textSize="27sp"
+        android:fontFamily="@font/kodemono"
+        android:backgroundTint="@color/gold"
+        android:visibility="gone"
+        android:onClick="nuevaPartida"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ganador"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<!-- res/drawable/rounded_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo del TextView -->
+    <solid android:color="@color/azul_600t" />
+
+    <!-- Borde -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/azul_600" />
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="20dp" />
+
+    <!-- Padding -->
+    <padding
+        android:left="10dp"
+        android:right="10dp" />
+</shape>

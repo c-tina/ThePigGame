@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tapeteClaro">#09b085</color>
+    <color name="tapeteOscuro">#097a5d</color>
+    <color name="rojo">#ff0000</color>
+    <color name="marron">#b2786a</color>
+    <color name="transparente">#00000000</color>
+    <color name="gold">#ffd700</color>
+    <color name="azul_100">#A9D8E3</color>
+    <color name="azul_500">#72B4E6</color>
+    <color name="azul_600">#5D76E3</color>
+    <color name="azul_600t">#805D76E3</color>
+</resources>
